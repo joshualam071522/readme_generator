@@ -2,6 +2,9 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Link to walkthrough video
+https://drive.google.com/file/d/1f0bOCSmpSjk8345gSxsT-M06KTMbK0TG/view
+
   ## Table of Contents
 
   * [Description](#description)
