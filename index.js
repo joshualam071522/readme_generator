@@ -27,8 +27,23 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'credits',
+        name: 'credit',
         message: 'List collaborators with links to Github Profiles'
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'What tests were run'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your Github username?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email?'
     },
     {
         type: 'list',
