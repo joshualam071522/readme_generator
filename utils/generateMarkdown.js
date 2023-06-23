@@ -8,8 +8,12 @@ const licenseDetails = {
 
 //* function that generates the badge based on the one you chose in the prompt
 function renderLicenseBadge(license) {
+  if (license == 'None') {
+    return '';
+  } else {
     //* uses two-dimesional arrays to return the license's badge
-    return licenseDetails[license][0];  
+    return licenseDetails[license][0];
+  } 
 }
 
 //* renders link to the license based on the one you chose in the prompt
@@ -17,7 +21,7 @@ function renderLicenseLink(license) {
   if (license == 'None') {
     return '';
   } else {
-    //* uses two-dimesional arrays to return the license's badge
+    //* uses two-dimesional arrays to return the license's link
     return licenseDetails[license][1];
   }
 }
