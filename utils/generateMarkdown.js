@@ -43,7 +43,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Credits](#credits)
   * [Tests](#tests)
-  * [Questions](#questions)\n
+  * [Questions](#questions)
   ## Description\n ${data.description}\n
   ## Installation\n ${data.installation}\n
   ## Usage\n ${data.usage}\n
