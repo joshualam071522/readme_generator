@@ -38,7 +38,7 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+//* function that will writefile system of node
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => 
         err ? console.error(err) 
@@ -46,7 +46,7 @@ function writeToFile(fileName, data) {
     );
 }
 
-// TODO: Create a function to initialize app
+//* function that will initialize the prompt and writefile functions once user types index.js in the terminal
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
@@ -56,5 +56,5 @@ function init() {
     })
 }
 
-// Function call to initialize app
+//* Function call to initialize app
 init();
