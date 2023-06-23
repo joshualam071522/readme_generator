@@ -8,6 +8,7 @@ const licenseDetails = {
 
 //* function that generates the badge based on the one you chose in the prompt
 function renderLicenseBadge(license) {
+    //* uses two-dimesional arrays to return the license's badge
     return licenseDetails[license][0];  
 }
 
@@ -16,32 +17,30 @@ function renderLicenseLink(license) {
   if (license == 'None') {
     return '';
   } else {
+    //* uses two-dimesional arrays to return the license's badge
     return licenseDetails[license][1];
   }
 }
-console.log(renderLicenseLink('MIT'))
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//* function that renders the license section
 function renderLicenseSection(license) {
+  //* if "None" option was picked during prompt, the license section will not be created
   if (license == 'None') {
     return '';
   } else {
-    return `## License\n `
+    //* renders license section with badge, then statement about which license used, then a link with that license
+    return `## License\n${renderLicenseBadge(license)}\nThis project is licensed under the ${license} license.\n${renderLicenseLink(license)}`
   }
 }
 
-// TODO: Create a function to generate markdown for README
+//* Generates readme content
 function generateMarkdown(data) {
   return `# ${data.title}\n
   ## Description\n ${data.description}\n
   ## Installation\n ${data.installation}\n
   ## Usage\n ${data.usage}\n
   ## Credits\n ${data.credits}\n
-  ${renderLicenseSection(data.license)}
-  ${renderLicenseBadge(data.license)}\n 
-  This project is licensed under the ${data.license} license.\n 
-  ${renderLicenseLink(data.license)}`;
+  ${renderLicenseSection(data.license)}`;
 }
 
 module.exports = generateMarkdown;
