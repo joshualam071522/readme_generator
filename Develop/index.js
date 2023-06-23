@@ -33,16 +33,28 @@ const questions = [
     {
         type: 'list',
         name: 'license',
-        message: 'Please choose a license for your project'
-        ['MIT', 'Apache 2.0', 'GNU GPL v3', 'None']
+        message: 'Please choose a license for your project',
+        choices: ['MIT', 'Apache', 'GPL', 'None']
     },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => 
+        err ? console.error(err) 
+            : console.log('Successfully wrote the readme!')
+    );
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then((data) => {
+        console.log(data.license);
+        const markdown = generateMarkdown(data);
+        writeToFile('README.md', markdown);
+    })
+}
 
 // Function call to initialize app
 init();
